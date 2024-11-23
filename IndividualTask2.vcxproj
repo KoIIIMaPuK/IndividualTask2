@@ -127,7 +127,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="IndividualTask2.cpp" />
+    <ClCompile Include="SClient.cpp" />
+    <ClCompile Include="SService.cpp" />
+    <ClCompile Include="SUsage.cpp" />
+    <ClCompile Include="__main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include.h" />
+    <ClInclude Include="SClient.h" />
+    <ClInclude Include="SService.h" />
+    <ClInclude Include="SUsage.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

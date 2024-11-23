@@ -8,7 +8,7 @@
 
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 // 
-// Перечисления для действий и типов файлов 
+// Перечисления для действий и типов файлов.
 //
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 /*
@@ -25,7 +25,7 @@
 *   - EXIT: Действие, указывающее на выход из программы. Значение: 3
 *
 */
-enum Action { INPUT = 1, READ, EXIT };
+enum Action { AINPUT = 1, AREAD, AEXIT };
 
 
 /*
@@ -53,7 +53,7 @@ enum FileType { CLIENT = 1, SERVICE, USAGE, BACK };
 
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 // 
-// Функция для отображения меню действий с файлами
+// Функция для отображения меню действий с файлами.
 //
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 /*
@@ -129,19 +129,19 @@ static inline void FShowMenuFile() {
 *       Функция использует потоки для чтения и записи данных в файлы.
 *
 */
-void HandleFileOperation(char action, FileType fileType, SClient& client, SService& service, SUsage& usage) {
+void HandleFileOperation(Action action, FileType fileType, SClient& client, SService& service, SUsage& usage) {
     std::ofstream WobjectClass; // Объект для записи в файл
     std::ifstream RobjectClass; // Объект для чтения из файла
 
 
     //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
     // 
-    // Выбор действия в зависимости от типа файла
+    // Выбор действия в зависимости от типа файла.
     //
     //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
     switch (fileType) {
     case FileType::CLIENT: // Если выбран тип файла "Client"
-        if (action == INPUT) { // Если действие - ввод данных
+        if (action == Action::AINPUT) { // Если действие - ввод данных
             std::cout << "Writing to Client file...\n";
             client.FWriteToFile(WobjectClass); // Запись данных клиента в файл
             std::cout << "Writing completed successfully!\n";
@@ -153,7 +153,7 @@ void HandleFileOperation(char action, FileType fileType, SClient& client, SServi
         }
         break;
     case FileType::SERVICE: // Если выбран тип файла "Service"
-        if (action == INPUT) { // Если действие - ввод данных
+        if (action == Action::AINPUT) { // Если действие - ввод данных
             std::cout << "Writing to Service file...\n";
             service.FWriteToFile(WobjectClass); // Запись данных сервиса в файл
             std::cout << "Writing completed successfully!\n";
@@ -165,7 +165,7 @@ void HandleFileOperation(char action, FileType fileType, SClient& client, SServi
         }
         break;
     case FileType::USAGE: // Если выбран тип файла "Usage"
-        if (action == INPUT) { // Если действие - ввод данных
+        if (action == Action::AINPUT) { // Если действие - ввод данных
             std::cout << "Writing to Usage file...\n";
             usage.FWriteToFile(WobjectClass); // Запись данных использования в файл
             std::cout << "Writing completed successfully!\n";
@@ -199,13 +199,13 @@ void HandleFileOperation(char action, FileType fileType, SClient& client, SServi
 *
 */
 int main() {
-    Action userAction = EXIT;
+    Action userAction = AEXIT;
     FileType fileType = BACK;
     
 
     //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
     //
-    // Создание объектов для работы с данными
+    // Создание объектов для работы с данными.
     //
     //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
     SClient client;
@@ -221,7 +221,7 @@ int main() {
 
     //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
     // 
-    // Основной цикл программы, который будет выполняться до выхода
+    // Основной цикл программы, который будет выполняться до выхода.
     // 
     //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
     while (true) {
@@ -230,9 +230,9 @@ int main() {
         std::cin >> actionInput;
         userAction = static_cast<Action>(actionInput);
 
-        if (userAction == EXIT) break;
+        if (userAction == Action::AEXIT) break;
 
-        if (userAction == INPUT || userAction == READ) {
+        if (userAction == Action::AINPUT || userAction == Action::AREAD) {
             FShowMenuFile();
             int fileInput;
             std::cin >> fileInput;

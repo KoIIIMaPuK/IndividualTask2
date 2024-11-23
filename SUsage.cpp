@@ -2,9 +2,7 @@
 
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 //
-// Геттеры
-// 
-//  * В теории даже не пригодятся особо, но почему бы и нет?
+// Функции для установки значений полей класса SUsage
 //
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 void SUsage::FSETSTRING_ClientPhoneNumber(const std::string& VARIABLE_strClientPhoneNumber) { this->strClientPhoneNumber = VARIABLE_strClientPhoneNumber; }
@@ -21,9 +19,7 @@ void SUsage::FSETUINT64T_ServiceCode(const std::uint64_t& VARIABLE_strServiceCod
 
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 //
-// Геттеры
-// 
-//  * В теории даже не пригодятся особо, но почему бы и нет?
+// Функции для получения значений полей класса SUsage
 //
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 std::string SUsage::FGETSTRING_ClientPhoneNumber()	const { return this->strClientPhoneNumber; }

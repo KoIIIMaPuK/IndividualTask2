@@ -2,7 +2,7 @@
 
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 //
-// 
+// Функции для установки значений полей класса SClient
 //
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 void SClient::FSETSTRING_ClientFullName(const std::string& VARIABLE_strClientFullName) { this->strClientFullName = VARIABLE_strClientFullName; }
@@ -21,7 +21,7 @@ void SClient::FSETDOUBLE_CreditАllowable(const double& VARIABLE_doubleCreditАllo
 
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 //
-// 
+// Функции для получения значений полей класса SClient
 //
 //-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
 std::string SClient::FGETSTRING_ClientFullName()			const { return this->strClientFullName; }
