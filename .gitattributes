@@ -1,1 +1,6 @@
-* working-tree-encoding=CP1251 eol=CRLF
+# Указываем, что все текстовые файлы должны использовать UTF-8
+* text=auto
+
+# Указываем кодировку для файлов .cpp и .h
+*.cpp text working-tree-encoding=UTF-8
+*.h text working-tree-encoding=UTF-8
