@@ -64,11 +64,12 @@ void SUsage::FWriteToFile(std::ofstream& objectClass)
 	//
 	// ѕроизводим инициализацию переменных
 	// 
+	std::cin.ignore();
 	SetConsoleCP(1251);	// ћен€ем кодировку консоли дл€ правильной записи кириллици в файл
-	std::cout << "~$ Enter phone number: ";								std::getline(std::cin, this->strClientPhoneNumber);		std::cout << "-------------------" << std::endl;	// »спользуем getline, чтобы избежать проблем с пробелами у std::cin
-	std::cout << "~$ Enter data time: ";								std::getline(std::cin, this->strUsageDateTime);			std::cout << "-------------------" << std::endl;	// »спользуем getline, чтобы избежать проблем с пробелами у std::cin
-	std::cout << "~$ Enter duration: ";									std::getline(std::cin, this->strDuration);				std::cout << "-------------------" << std::endl;	// »спользуем getline, чтобы избежать проблем с пробелами у std::cin
-	std::cout << "~$ Enter servie code: ";								std::cin >> this->uint64tServiceCode;					std::cout << "-------------------" << std::endl;
+	std::cout << "~$ Enter phone number: ";								std::getline(std::cin, this->strClientPhoneNumber);		std::cout << "\n-------------------" << std::endl;	// »спользуем getline, чтобы избежать проблем с пробелами у std::cin
+	std::cout << "~$ Enter data time: ";								std::getline(std::cin, this->strUsageDateTime);			std::cout << "\n-------------------" << std::endl;	// »спользуем getline, чтобы избежать проблем с пробелами у std::cin
+	std::cout << "~$ Enter duration: ";									std::getline(std::cin, this->strDuration);				std::cout << "\n-------------------" << std::endl;	// »спользуем getline, чтобы избежать проблем с пробелами у std::cin
+	std::cout << "~$ Enter servie code: ";								std::cin >> this->uint64tServiceCode;					std::cin.ignore();						std::cout << "\n-------------------" << std::endl;
 	SetConsoleCP(866);	// ¬озвращаем исходную
 	//
 	/////////////////////////////////////////////////////////////////////////////////////////

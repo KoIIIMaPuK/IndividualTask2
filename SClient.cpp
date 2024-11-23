@@ -68,13 +68,14 @@ void SClient::FWriteToFile(std::ofstream& objectClass)
 	//
 	// ѕроизводим инициализацию переменных
 	// 
+	std::cin.ignore();
 	SetConsoleCP(1251);	// ћен€ем кодировку консоли дл€ правильной записи кириллици в файл
-	std::cout << "~$ Enter full name: ";								std::getline(std::cin, this->strClientFullName);			std::cout << "-------------------" << std::endl; // »спользуем getline, чтобы избежать проблем с пробелами у std::cin
-	std::cout << "~$ Enter phone number: ";								std::getline(std::cin, this->strClientPhoneNumber);			std::cout << "-------------------" << std::endl; // »спользуем getline, чтобы избежать проблем с пробелами у std::cin
-	std::cout << "~$ Enter the date of conclusion of the contract: ";	std::getline(std::cin, this->strDateConclusionContract);	std::cout << "-------------------" << std::endl; // »спользуем getline, чтобы избежать проблем с пробелами у std::cin
-	std::cout << "~$ Enter the end date of the contract: ";				std::getline(std::cin, this->strDataExpirationContract);	std::cout << "-------------------" << std::endl; // »спользуем getline, чтобы избежать проблем с пробелами у std::cin
-	std::cout << "~$ Enter the amount of debt ";						std::cin >> this->doubleDebtAmount;							std::cout << "-------------------" << std::endl;
-	std::cout << "~$ Enter acceptable credit ";							std::cin >> this->doubleCreditAllowable;					std::cout << "-------------------" << std::endl;
+	std::cout << "~$ Enter full name: ";								std::getline(std::cin, this->strClientFullName);			std::cout << "\n-------------------" << std::endl; // »спользуем getline, чтобы избежать проблем с пробелами у std::cin
+	std::cout << "~$ Enter phone number: ";								std::getline(std::cin, this->strClientPhoneNumber);			std::cout << "\n-------------------" << std::endl; // »спользуем getline, чтобы избежать проблем с пробелами у std::cin
+	std::cout << "~$ Enter the date of conclusion of the contract: ";	std::getline(std::cin, this->strDateConclusionContract);	std::cout << "\n-------------------" << std::endl; // »спользуем getline, чтобы избежать проблем с пробелами у std::cin
+	std::cout << "~$ Enter the end date of the contract: ";				std::getline(std::cin, this->strDataExpirationContract);	std::cout << "\n-------------------" << std::endl; // »спользуем getline, чтобы избежать проблем с пробелами у std::cin
+	std::cout << "~$ Enter the amount of debt ";						std::cin >> this->doubleDebtAmount;							std::cin.ignore();					std::cout << "\n-------------------" << std::endl;
+	std::cout << "~$ Enter acceptable credit ";							std::cin >> this->doubleCreditAllowable;					std::cin.ignore();					std::cout << "\n-------------------" << std::endl;
 	SetConsoleCP(866);	// ¬озвращаем исходную
 	//
 	/////////////////////////////////////////////////////////////////////////////////////////

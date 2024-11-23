@@ -64,11 +64,12 @@ void SService::FWriteToFile(std::ofstream& objectClass)
 	//
 	// ѕроизводим инициализацию переменных
 	// 
+	std::cin.ignore();
 	SetConsoleCP(1251);	// ћен€ем кодировку консоли дл€ правильной записи кириллици в файл
-	std::cout << "~$ Enter full name: ";								std::getline(std::cin, this->strNameService);		std::cout << "-------------------" << std::endl; // »спользуем getline, чтобы избежать проблем с пробелами у std::cin
-	std::cout << "~$ Enter phone number: ";								std::getline(std::cin, this->strTimeUnit);			std::cout << "-------------------" << std::endl; // »спользуем getline, чтобы избежать проблем с пробелами у std::cin
-	std::cout << "~$ Enter the amount of debt ";						std::cin >> this->uint64tServiceCode;				std::cout << "-------------------" << std::endl;
-	std::cout << "~$ Enter acceptable credit ";							std::cin >> this->doubleTariff;						std::cout << "-------------------" << std::endl;
+	std::cout << "~$ Enter full name: ";								std::getline(std::cin, this->strNameService);		std::cout << "\n-------------------" << std::endl; // »спользуем getline, чтобы избежать проблем с пробелами у std::cin
+	std::cout << "~$ Enter phone number: ";								std::getline(std::cin, this->strTimeUnit);			std::cout << "\n-------------------" << std::endl; // »спользуем getline, чтобы избежать проблем с пробелами у std::cin
+	std::cout << "~$ Enter the amount of debt ";						std::cin >> this->uint64tServiceCode;				std::cin.ignore();						std::cout << "\n-------------------" << std::endl;
+	std::cout << "~$ Enter acceptable credit ";							std::cin >> this->doubleTariff;						std::cin.ignore();						std::cout << "\n-------------------" << std::endl;
 	SetConsoleCP(866);	// ¬озвращаем исходную
 	//
 	/////////////////////////////////////////////////////////////////////////////////////////
